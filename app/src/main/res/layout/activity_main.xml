@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/firstHiddenLayer"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:digits="0123456789"
+        android:hint="25"
+        android:inputType="number|phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Use second hidden layer"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/secondHiddenLayer"
+        app:layout_constraintTop_toBottomOf="@+id/firstHiddenLayer" />
+
+    <EditText
+        android:id="@+id/secondHiddenLayer"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:digits="0123456789"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="25"
+        android:inputType="number|phone"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+    <EditText
+        android:id="@+id/cycles"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:digits="0123456789"
+        android:hint="5000"
+        android:inputType="number|phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+    <EditText
+        android:id="@+id/learningRate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:digits="0123456789."
+        android:hint="0.00333"
+        android:inputType="number|phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cycles" />
+    <TextView
+        android:id="@+id/learningRateTW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Learning Rate"
+        app:layout_constraintBottom_toBottomOf="@+id/learningRate"
+        app:layout_constraintStart_toEndOf="@+id/learningRate"
+        app:layout_constraintTop_toTopOf="@+id/learningRate" />
+
+    <TextView
+        android:id="@+id/epochsTW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Epochs"
+        app:layout_constraintBottom_toBottomOf="@+id/cycles"
+        app:layout_constraintStart_toEndOf="@+id/cycles"
+        app:layout_constraintTop_toTopOf="@+id/cycles" />
+
+    <TextView
+        android:id="@+id/FirstHiddenTW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="First Hidden Layer"
+        app:layout_constraintBottom_toBottomOf="@+id/firstHiddenLayer"
+        app:layout_constraintStart_toEndOf="@+id/firstHiddenLayer"
+        app:layout_constraintTop_toTopOf="@+id/firstHiddenLayer" />
+
+    <Button
+        android:id="@+id/addData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="Add Data"
+        app:layout_constraintBottom_toBottomOf="@+id/FirstHiddenTW"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/FirstHiddenTW"
+        app:layout_constraintVertical_bias="0.448" />
+
+    <Button
+        android:id="@+id/options"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Options"
+        app:layout_constraintEnd_toEndOf="@+id/addData"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/addData"
+        app:layout_constraintTop_toBottomOf="@+id/addData" />
+
+    <TextView
+        android:id="@+id/secondHiddenTW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Second Hidden Layer"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/secondHiddenLayer"
+        app:layout_constraintStart_toEndOf="@+id/secondHiddenLayer"
+        app:layout_constraintTop_toTopOf="@+id/secondHiddenLayer" />
+
+    <LinearLayout
+        android:id="@+id/dataBoard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constrainedHeight="true"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/learningRate">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Input data" />
+
+                <EditText
+                    android:id="@+id/inputEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_border"
+                    android:digits="0123456789,.\n"
+                    android:ems="10"
+                    android:gravity="left|top"
+                    android:inputType="textMultiLine|number|phone"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:scrollbars="vertical"
+                    android:text=""
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="24dp"
+                    android:text="Output data" />
+
+                <TextView
+                    android:id="@+id/outputTW"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_border"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:scrollbars="vertical"
+                    android:text=""
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
